@@ -1,119 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>My Dream Business</title>
-    <meta name="description" content="Welcome to my dream business website!">
-
-    <!-- Pretty font (optional) -->
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;700&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="index.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>USAGE PH - HOME</title>
+    <meta name="description" content="Welcome to USAGE PH">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- Header with logo + links -->
 <header>
-    <div class="wrap">
-        <!-- Change logo.png to your logo file -->
-        <a class="brand" href="#top"><img src="logo.png" alt="My Business Logo"><b>My Dream Business</b></a>
-        <nav>
-            <a class="btn" href="#products">Products</a>
-            <a class="btn" href="#about">About</a>
-            <a class="btn" href="#contact">Contact</a>
-        </nav>
-    </div>
+    <div class="logo">USAGE PH</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="boutique.html">Collections</a>
+    </nav>
 </header>
 
-<main id="top">
-    <!-- HERO / Welcome -->
-    <section class="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Welcome to My Dream Business!</h1>
-        <p>Delicious treats and awesome goodies. Browse our favorites below.</p>
-        <div class="cta">
-            <a class="btn" href="#products">See Products</a>
-            <a class="btn" href="#contact">Visit / Contact</a>
-        </div>
-    </section>
+<section id="home">
+    <h1>Welcome to USAGE PH</h1>
+    <p>Simple, modern, and built for you.</p>
+    <a href="#about">Learn More</a>
+</section>
 
-    <!-- PRODUCTS -->
-    <h2 id="products">Products</h2>
-    <p class="meta">Replace the images, names, and prices with your own.</p>
+<section id="about">
+    <h2>About Us</h2>
+    <p>USAGE PH focuses on clean design and simple ideas. Our goal is to create products that look good and work well. We believe good design should be functional and timeless.</p>
+</section>
 
-    <div class="grid">
-        <!-- Duplicate these cards to add more products -->
-        <article class="card">
-            <img src="product1.jpg" alt="Product 1 photo">
-            <div class="pad">
-                <h3 class="title">Chocolate Cupcake</h3>
-                <p class="meta">Rich cocoa, fluffy frosting.</p>
-                <div class="row">
-                    <span class="price">₱60</span>
-                    <button class="add" type="button">Add</button>
-                </div>
-            </div>
-        </article>
+<section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-        <article class="card">
-            <img src="product2.jpg" alt="Product 2 photo">
-            <div class="pad">
-                <h3 class="title">Vanilla Milkshake</h3>
-                <p class="meta">Creamy and cool.</p>
-                <div class="row">
-                    <span class="price">₱95</span>
-                    <button class="add" type="button">Add</button>
-                </div>
-            </div>
-        </article>
-
-        <article class="card">
-            <img src="product3.jpg" alt="Product 3 photo">
-            <div class="pad">
-                <h3 class="title">Strawberry Donut</h3>
-                <p class="meta">Sweet glaze, soft dough.</p>
-                <div class="row">
-                    <span class="price">₱45</span>
-                    <button class="add" type="button">Add</button>
-                </div>
-            </div>
-        </article>
-    </div>
-
-    <!-- ABOUT -->
-    <h2 id="about">About Us</h2>
-    <section class="about">
-        <p><b>Our Story:</b> We started with a dream and a whisk! We love making treats that make people smile.</p>
-        <ul>
-            <li>We use fresh ingredients.</li>
-            <li>We’re kind to the planet.</li>
-            <li>We support local growers.</li>
-        </ul>
-    </section>
-
-    <!-- CONTACT -->
-    <h2 id="contact">Contact</h2>
-    <section class="contact">
-        <p>Email: <a href="mailto:hello@mydream.biz">hello@mydream.biz</a></p>
-        <p>Phone: <a href="tel:+639171234567">+63 917 123 4567</a></p>
-        <!-- Replace the map link with your city -->
-        <p>Find us on the map: <a href="https://www.google.com/maps/search/coffee+shop+near+me" target="_blank" rel="noopener">Open Map</a></p>
-    </section>
-</main>
-
-<!-- Footer -->
 <footer>
-    <div class="foot">
-        <div>© 2025 My Dream Business</div>
-        <div>
-            <a href="#top">Back to top ↑</a>
-        </div>
-    </div>
+    <p>© 2025 USAGE PH. All rights reserved.</p>
 </footer>
-
-<!-- Optional JavaScript (just for fun) -->
-<script src="index.js">
-    // Make the "Add" buttons give a quick success message
-
-</script>
 </body>
 </html>
