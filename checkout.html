@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UsagePH - Checkout</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" href="img/logo-removebg-preview.png">
+    <link href="checkout.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <div class="logo">USAGE.PH</div>
+        <div class="nav-right">
+            <nav>
+                <a href="index.html">About</a>
+                <a href="#products">Collections</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="checkout-main">
+        <section class="checkout-list">
+            <h2>Your Order</h2>
+            <div id="checkout-items"></div>
+        </section>
+        <aside class="checkout-form">
+            <h2>Checkout</h2>
+            <form id="order-form">
+                <label for="name">Full name</label>
+                <input id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" class="primary">Place Order</button>
+                    <button type="button" class="ghost" onclick="clearCart()">Clear Cart</button>
+                </div>
+                <fieldset class="payment-methods">
+                    <legend>Payment method</legend>
+                    <label><input type="radio" name="payment" value="card" checked><span class="pm-label">Credit / Debit Card</span></label>
+                    <label><input type="radio" name="payment" value="cod"><span class="pm-label">Cash on Delivery</span></label>
+                </fieldset>
+
+                <div id="card-details" style="display:block; margin-top:12px;">
+                    <label for="card-number">Card number</label>
+                    <input id="card-number" name="card-number" inputmode="numeric" pattern="[0-9 ]*" placeholder="1234 5678 9012 3456">
+
+                    <div style="display:flex; gap:8px;">
+                        <div style="flex:1;">
+                            <label for="card-exp">Expiry</label>
+                            <input id="card-exp" name="card-exp" placeholder="MM/YY">
+                        </div>
+                        <div style="width:120px;">
+                            <label for="card-cvv">CVV</label>
+                            <input id="card-cvv" name="card-cvv" inputmode="numeric" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </aside>
+    </main>
+    <footer class="site-footer">
+        <div class="container">© 2025 USAGE.PH — All rights reserved.</div>
+    </footer>
+    <script src="bountique.js"></script>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            if (typeof renderCheckout === 'function') renderCheckout();
+
+
+            function toggleCardDetails() {
+                const val = document.querySelector('input[name="payment"]:checked')?.value;
+                const cardDetails = document.getElementById('card-details');
+                if (!cardDetails) return;
+                cardDetails.style.display = (val === 'card') ? 'block' : 'none';
+            }
+
+            document.querySelectorAll('input[name="payment"]').forEach(r => r.addEventListener('change', toggleCardDetails));
+            toggleCardDetails();
+
+
+            const form = document.getElementById('order-form');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    if (cart.length === 0) { alert('Your cart is empty.'); return; }
+                    const payment = document.querySelector('input[name="payment"]:checked')?.value;
+                    if (payment === 'card') {
+                        const cardNumber = document.getElementById('card-number').value.trim();
+                        const cardExp = document.getElementById('card-exp').value.trim();
+                        const cardCvv = document.getElementById('card-cvv').value.trim();
+                        if (!cardNumber || !cardExp || !cardCvv) { alert('Please fill in your card details.'); return; }
+                    }
+                    const name = document.getElementById('name').value;
+                    alert('Thanks ' + name + '! Your order has been placed.');
+                    if (typeof clearCart === 'function') clearCart();
+                    if (typeof renderCheckout === 'function') renderCheckout();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

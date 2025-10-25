@@ -3,189 +3,107 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UsagePH</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" href="img/logo-removebg-preview.png">
 
-        body {
-            color: white;
-            background-color: black;
-            overflow-x: hidden;
-        }
-
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.35);
-            z-index: 1;
-        }
-
-        header {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 60px;
-            z-index: 2;
-        }
-
-        .center-nav {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .center-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-            transition: 0.3s;
-        }
-
-        .center-nav a:hover {
-            text-decoration: underline;
-        }
-
-        .hero-text {
-            position: absolute;
-            bottom: 180px;
-            left: 80px;
-            max-width: 500px;
-            z-index: 2;
-        }
-
-        .hero-text h2 {
-            font-size: 26px;
-            margin-bottom: 12px;
-            font-weight: bold;
-        }
-
-        .hero-text p {
-            line-height: 1.6;
-            font-size: 15px;
-            margin-bottom: 15px;
-            color: #e5e5e5;
-        }
-
-        .hero-text a {
-            color: white;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            padding: 15px 0;
-            z-index: 999;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .bottom-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .bottom-nav a:hover {
-            text-decoration: underline;
-            color: #ffefc3;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 20px;
-            }
-
-            .center-nav a {
-                font-size: 16px;
-            }
-
-            .hero-text {
-                left: 30px;
-                bottom: 140px;
-                max-width: 90%;
-            }
-
-            .hero-text h2 {
-                font-size: 22px;
-            }
-
-            .bottom-nav {
-                gap: 30px;
-                padding: 12px 0;
-            }
-        }
-    </style>
+    <link href="index.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    <title>UsagePH - About Us</title>
 </head>
 <body>
-<section class="hero" id="home">
-    <img src="img\bg.png" alt="Background Image" />
-    <div class="overlay"></div>
-
-    <header>
-        <div class="logo">USAGE PH</div>
-        <div class="center-nav">
-            <a href="boutique.html">COLLECTIONS</a>
-        </div>
+    <header class="site-header">
+        <div class="logo">USAGE.PH</div>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="boutique.html">Collections</a>
+        </nav>
     </header>
 
-    <div class="hero-text">
-        <h2>UsagePH</h2>
-        <p>
-            USAGE PH focuses on clean design and simple ideas. Our goal is to create products that look good and work well.
-            We believe good design should be functional and timeless
-        </p>
-        <h4>Shop Now!</h4>
-    </div>
-</section>
+    <section class="hero" id="home">
+    <img class="hero-bg" src="img/bg.png" alt="Background Image" />
+        <div class="overlay"></div>
 
-<div class="bottom-nav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-</div>
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>About Us</h1>
+                <p>
+                    UsagePH focuses on clean design and simple ideas. Our goal is to sell products that look good and work well. We believe good design should be functional.
+                </p>
+                <div class="hero-cta">
+                    <a id="homebutton" href="boutique.html">Shop Collection</a>
+                </div>
+            </div>
+
+            <aside class="hero-side" aria-labelledby="dev-about">
+                <div class="dev-card">
+                    <img src="img/webdeveloper.png" alt="Website Developer" />
+                    <div class="dev-info">
+                        <h3 id="dev-about">Website Developer</h3>
+                        <p><strong>Kathlyne Mae Fernandez</strong></p>
+                        <p>2ND YEAR - BSIT</p>
+                            <div class="dev-actions">
+                                <a class="btn" href="https://github.com/posaykat">Github</a>
+                            </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 USAGE.PH — All rights reserved.</div>
+    </footer>
+
+    <script src="bountique.js"></script>
+    <script>
+
+        const orderForm = document.getElementById('order-form');
+        if (orderForm) {
+            orderForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                if (cart.length === 0) {
+                    alert('Your cart is empty.');
+                    return;
+                }
+
+
+                const paymentEl = document.querySelector('input[name="payment"]:checked');
+                const payment = paymentEl ? paymentEl.value : null;
+                if (payment === 'card') {
+                    const cardNumber = document.getElementById('card-number').value.trim();
+                    const cardExp = document.getElementById('card-exp').value.trim();
+                    const cardCvv = document.getElementById('card-cvv').value.trim();
+                    if (!cardNumber || !cardExp || !cardCvv) {
+                        alert('Please fill in your card details.');
+                        return;
+                    }
+                }
+
+                const name = document.getElementById('name') ? document.getElementById('name').value : 'Customer';
+                alert('Thanks ' + name + '! Your order has been placed.');
+                if (typeof clearCart === 'function') clearCart();
+                if (typeof renderCheckout === 'function') renderCheckout();
+            });
+
+            function toggleCardDetails() {
+                const valEl = document.querySelector('input[name="payment"]:checked');
+                const val = valEl ? valEl.value : null;
+                const cardDetails = document.getElementById('card-details');
+                if (!cardDetails) return;
+                if (val === 'card') cardDetails.style.display = 'block';
+                else cardDetails.style.display = 'none';
+            }
+
+            document.querySelectorAll('input[name="payment"]').forEach(r => {
+                r.addEventListener('change', toggleCardDetails);
+            });
+
+            toggleCardDetails();
+        }
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
 

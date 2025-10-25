@@ -3,17 +3,57 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>USAGE PH - PRODUCTS</title>
+    <title>UsagePH - Collections</title>
     <meta name="description" content="USAGE PH - Trendy clothing for your everyday style.">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo-removebg-preview.png">
+    <link rel="apple-touch-icon" href="img/logo-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
    <link type="text/css" rel="stylesheet" href="boutique.css"/>
 </head>
 <body>
-<main>
+    <header>
+        <button class="category-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="logo">USAGE.PH</div>
+        <div class="nav-right">
+            <nav>
+                <a href="index.html">About</a>
+                <a href="#products">Collections</a>
+            </nav>
+            <button class="cart-icon">
+                🛒 <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <aside class="nav-sidebar">
+        <h3>Categories</h3>
+        <nav class="category-nav">
+            <a href="#bucket-hat">Bucket Hats</a>
+            <a href="#CAPS">Caps</a>
+            <a href="#pants">Men's Pants</a>
+            <a href="#Shirts">Men's Shirts</a>
+            <a href="#tops">Women's Tops</a>
+            <a href="#bottoms">Women's Bottoms</a>
+            <a href="#sandals">Sandals</a>
+            <a href="#shoes">Shoes</a>
+        </nav>
+    </aside>
+
+    <aside class="cart-sidebar">
+        <h3>Shopping Cart</h3>
+        <div id="cart-items"></div>
+        <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+    </aside>
+
+    <main>
     <h2 id="products">Our Collection</h2>
 
-    <!-- BUCKET HAT -->
-    <section class="category" id="bucket hat">
+    <section class="category" id="bucket-hat">
         <h3 class="category-title">Bucket Hat</h3>
         <div class="grid">
             <article class="card">
@@ -39,7 +79,7 @@
                 </div>
             </article>
             <article class="card">
-                <img src="img\bb blue.png" alt="Bucket Hat">
+                <img src="img\bbblue.png" alt="Bucket Hat">
                 <div class="pad">
                     <h4 class="title">Burberry BH Denim</h4>
                     <p class="meta">Size: Fits to all</p>
@@ -79,17 +119,6 @@
                     <div class="row">
                         <span class="price">₱1,399</span>
                         <button class="add" type="button" onclick="addToCart('Chanel Denim', 1,399)">Add</button>
-                    </div>
-                </div>
-            </article>
-            <article class="card">
-                <img src="img\cc.png" alt="Bucket Hat">
-                <div class="pad">
-                    <h4 class="title">Chanel Bucket</h4>
-                    <p class="meta">Size: Fits to all</p>
-                    <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Bucket', 1,399)">Add</button>
                     </div>
                 </div>
             </article>
@@ -140,7 +169,6 @@
         </div>
     </section>
 
-    <!-- CAPS -->
     <section class="category" id="CAPS">
         <h3 class="category-title">Caps</h3>
         <div class="grid">
@@ -254,27 +282,15 @@
                     </div>
                 </div>
             </article>
-            <article class="card">
-                <img src="img\bbgreen.png" alt="Caps">
-                <div class="pad">
-                    <h4 class="title">Burberry Green</h4>
-                    <p class="meta">Size: Fits to all</p>
-                    <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Burberry Green', 1,399)">Add</button>
-                    </div>
-                </div>
-            </article>
         </div>
     </section>
 
-    <!-- PANTS -->
     <section class="category" id="pants">
         <h2 class="category-title">MEN'S WEAR</h2>
         <h3 class="category-title">Pants</h3>
         <div class="grid">
             <article class="card">
-                <img src="img\diormono.png" alt="Bucket Hat">
+                <img src="img\diormono.png" alt="pants">
                 <div class="pad">
                     <h4 class="title">Dior Oblique Denim</h4>
                     <p class="meta">Size: Large, Waistline: 33-34, Length: 40</p>
@@ -329,17 +345,6 @@
                 </div>
             </article>
             <article class="card">
-                <img src="img\moschino.png" alt="pants">
-                <div class="pad">
-                    <h4 class="title">Mos chino Multicolor</h4>
-                    <p class="meta">Size: Large, Waistline: 27-29, Length: 35</p>
-                    <div class="row">
-                        <span class="price">₱899</span>
-                        <button class="add" type="button" onclick="addToCart('Mos chino', 899)">Add</button>
-                    </div>
-                </div>
-            </article>
-            <article class="card">
                 <img src="img\jumper.png" alt="pants">
                 <div class="pad">
                     <h4 class="title">Louis Vuitton Jumper Monogram</h4>
@@ -390,7 +395,7 @@
                     <p class="meta">Size: Large, Waistline: 27-29, Length: 35</p>
                     <div class="row">
                         <span class="price">₱899</span>
-                        <button class="add" type="button" onclick="addtoCart('Moschino Multicolor', 899)">Add</button>
+                        <button class="add" type="button" onclick="addToCart('Moschino Multicolor', 899)">Add</button>
                     </div>
                 </div>
             </article>
@@ -401,7 +406,18 @@
         <h3 class="category-title">Shirts</h3>
         <div class="grid">
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1606761568499-6f89e3e4d20c?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\amipastelg.png" alt="polo">
+                <div class="pad">
+                    <h4 class="title">Ami Pastel Green</h4>
+                    <p class="meta">Size: Large</p>
+                    <div class="row">
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Ami Pastel Green', 999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\amigreen.png" alt="polo">
                 <div class="pad">
                     <h4 class="title">Ami Green</h4>
                     <p class="meta">Size: Large</p>
@@ -412,125 +428,569 @@
                 </div>
             </article>
             <article class="card">
-                <img src="img\blahblah.png" alt="Bucket hat">
+                <img src="img\amiblue.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Burberry Black Denim </h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Ami Blue</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Burberry Black Denim', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Ami Blue', 999)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\amipastelb.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Burberry BH Denim</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Ami Pastel Blue</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Burberry BH Denim', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Ami Pastel Blue', 999)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\amigray.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Chanel Denim Bucket</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Ami Gray</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Denim Bucket', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Ami Gray', 999)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\ggxbb.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Gucci Monogram</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Gucci x Balenciaga</h4>
+                    <p class="meta">Size: Large </p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Gucci Monogram', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Gucci x Balenciaga', 999)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\gggreen.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Chanel Denim</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Gucci Green</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
                         <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Denim', 1,399)">Add</button>
+                        <button class="add" type="button" onclick="addToCart('Gucci Green', 1,399)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\diorgray.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Chanel Denim Bucket</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Dior Moon</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
                         <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Bucket', 1,399)">Add</button>
+                        <button class="add" type="button" onclick="addToCart('Dior Moon', 1,399)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\levisblue.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Louis Vuitton White</h4>
-                    <p class="meta">Size: Fits to all</p>
+                    <h4 class="title">Levis Blue</h4>
+                    <p class="meta">Size: Large</p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Louis Vuitton White', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Levis Blue', 1,399)">Add</button>
                     </div>
                 </div>
             </article>
             <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
+                <img src="img\pradacrop.png" alt="polo">
                 <div class="pad">
-                    <h4 class="title">Channel CC Black</h4>
+                    <h4 class="title">Prada 'Kids Money' Crop</h4>
                     <p class="meta">Size: Fits to all</p>
                     <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel CC Black', 1,399)">Add</button>
-                    </div>
-                </div>
-            </article>
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
-                <div class="pad">
-                    <h4 class="title">Christian Dior (see through)</h4>
-                    <p class="meta">Size: Fits to all</p>
-                    <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Denim', 1,399)">Add</button>
-                    </div>
-                </div>
-            </article>
-            <article class="card">
-                <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=800&q=80" alt="Bucket Hat">
-                <div class="pad">
-                    <h4 class="title">Chanel Bucket</h4>
-                    <p class="meta">Size: Fits to all</p>
-                    <div class="row">
-                        <span class="price">₱1,399</span>
-                        <button class="add" type="button" onclick="addToCart('Chanel Denim', 1,399)">Add</button>
+                        <span class="price">₱999</span>
+                        <button class="add" type="button" onclick="addToCart('Prada Crop', 999)">Add</button>
                     </div>
                 </div>
             </article>
         </div>
     </section>
-</main>
-<aside id="cart">
-    <h3>Your Cart</h3>
-    <div id="cart-items"></div>
-    <button onclick="clearCart()">Clear Cart</button>
-</aside>
+    <section class="category" id="tops">
+        <h2 class="category-title">WOMEN'S WEAR</h2>
+        <h3 class="category-title">Tops</h3>
+             <div class="grid">
+                    <article class="card">
+                        <img src="img\amipink.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Ami Pink</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Ami Pink', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\loewered.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Loewe Red</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Loewe Red', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\pradablck.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Prada Black </h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Prada Black', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\celineg.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Floral Celine</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Floral Celine', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\guccistar.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Gucci Star Green</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Gucci Star Green', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\pink.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Margiela Pink</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Margiela', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\pradab.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Prada Black Crop</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Prada Black Crop', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\loewew.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Loewe Cream</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Loewe Cream', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\loewepink.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Loewe Pink</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Loewe Pink', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="img\loewebred.png" alt="tops">
+                        <div class="pad">
+                            <h4 class="title">Loewe Black</h4>
+                            <p class="meta">Size: Medium</p>
+                            <div class="row">
+                                <span class="price">₱899</span>
+                                <button class="add" type="button" onclick="addToCart('Loewe Black', 899)">Add</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-<script src="bountique.js">
-</script>
+    <section class="category" id="bottoms">
+        <h2 class="category-title">WOMEN'S WEAR</h2>
+        <h3 class="category-title">Bottoms</h3>
+        <div class="grid">
+            <article class="card">
+                <img src="img\fendicallig.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Fendi Karligraphy</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱899</span>
+                        <button class="add" type="button" onclick="addToCart('Fendi Karligraphy', 899)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\bbcream.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Balenciaga Cream Short</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱899</span>
+                        <button class="add" type="button" onclick="addToCart('Balenciaga Cream Short', 899)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\lvpinkshort.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Louis Vuitton Short Pink</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱899</span>
+                        <button class="add" type="button" onclick="addToCart('Louis Vuitton Short Pink', 899)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\lvmonotwoway.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Louis Vuitton Monogram </h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱899</span>
+                        <button class="add" type="button" onclick="addToCart('Louis Vuitton Monogram', 899)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\balenciagashort.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Balenciaga Short</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱799</span>
+                        <button class="add" type="button" onclick="addToCart('Balenciaga Short', 799)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\fendicallig.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Fendi Karligraphy</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱799</span>
+                        <button class="add" type="button" onclick="addToCart('Fendi Karligraphy', 799)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\celineskirt.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Celine Skirt</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱799</span>
+                        <button class="add" type="button" onclick="addToCart('Celine Skirt', 799)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\alexwang.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Alexander Wang Garterized</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱799</span>
+                        <button class="add" type="button" onclick="addToCart('Alexander Wang Garterized', 799)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\multicolorskirt.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Multicolor Louis Vuitton Skirt</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱799</span>
+                        <button class="add" type="button" onclick="addToCart('Multicolor Louis Vuitton Skirt', 799)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\guccidoraemon.png" alt="bottoms">
+                <div class="pad">
+                    <h4 class="title">Gucci Doraemon</h4>
+                    <p class="meta">Size: Medium</p>
+                    <div class="row">
+                        <span class="price">₱599</span>
+                        <button class="add" type="button" onclick="addToCart('Gucci Doraemon', 599)">Add</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="category" id="sandals">
+        <h3 class="category-title">Sandals</h3>
+        <div class="grid">
+            <article class="card">
+                <img src="img\black.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Two-tone Bow Slingback Mary Jane Pumps</h4>
+                    <p class="meta">Color: Black</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Two-tone Bow Slingback Mary Jane Pumps', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\lightgold.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Emiko Metallic Bow Mary Jane Flat</h4>
+                    <p class="meta">Color: Light Gold</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Emiko Metallic Bow Mary Jane Flat', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\polkadot.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Gertrude Faux Suede Studded Mary Jane</h4>
+                    <p class="meta">Color: Black Textured</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Gertrude Faux Suede Studded Mary Jane', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\blackk.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Erinna Metallic-Accent Wedge Mules</h4>
+                    <p class="meta">Color: Black</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Erinna Metallic-Accent Wedge Mules', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\red.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Barbara Patent Pearl-Embellished Bow Slingback Flats</h4>
+                    <p class="meta">Color: Red</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Barbara Patent Pearl-Embellished Bow Slingback Flats', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\cream.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Barbara Pearl-Embellished Bow Ballet Flats</h4>
+                    <p class="meta">Color: Cream</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Barbara Pearl-Embellished Bow Ballet Flats', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\twostrips.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Strappy Ridged-Sole Flatform Sandals</h4>
+                    <p class="meta">Color: Black</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Strappy Ridged-Sole Flatform Sandals', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\loafers.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Georgina Leather Penny Loafers</h4>
+                    <p class="meta">Color: Burgundy</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Georgina Leather Penny Loafers', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\animalprint.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Georgina Calf Leopard-Print Penny Loafers</h4>
+                    <p class="meta">Color: Animal Print Brown</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Georgina Calf Leopard-Print Penny Loafers', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\pointed.png" alt="sandals">
+                <div class="pad">
+                    <h4 class="title">Bow Metallic-Accent Pointed Toe</h4>
+                    <p class="meta">Color: Black</p>
+                    <div class="row">
+                        <span class="price">₱1999</span>
+                        <button class="add" type="button" onclick="addToCart('Bow Metallic-Accent Pointed Toe', 1999)">Add</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <section class="category" id="shoes">
+        <h3 class="category-title">Shoes</h3>
+        <div class="grid">
+            <article class="card">
+                <img src="img\nbwhite.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">New Balance MR530</h4>
+                    <p class="meta">Color: White</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('New Balance MR530', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\pumablack.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Puma SpeedCat OG</h4>
+                    <p class="meta">Color: Black</p>
+                    <div class="row">
+                        <span class="price">₱1399</span>
+                        <button class="add" type="button" onclick="addToCart('Puma SpeedCat OG', 1399)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\adidassamba.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Adidas Samba OG</h4>
+                    <p class="meta">Color: White</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('Adidas Samba OG', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\pumabrown.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Puma SpeedCat OG</h4>
+                    <p class="meta">Color: Brown</p>
+                    <div class="row">
+                        <span class="price">₱1399</span>
+                        <button class="add" type="button" onclick="addToCart('Puma SpeedCat OG', 1399)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\nbyellow.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">New Balance 1906</h4>
+                    <p class="meta">Color: Yellow</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('New Balance 1906', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\adidasfx.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Adidas FX Samba OG</h4>
+                    <p class="meta">Color: Beige</p>
+                    <div class="row">
+                        <span class="price">₱1399</span>
+                        <button class="add" type="button" onclick="addToCart('Adidas FX Samba OG', 1399)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\nbgrey.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">New Balance 574 Evergreen</h4>
+                    <p class="meta">Color: Grey</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('New Balance 574 Evergreen', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\conversewhite.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Converse Run Star Trainer</h4>
+                    <p class="meta">Color: White</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('Converge Run Star Trainer', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\pumablue.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Puma SpeedCat OG</h4>
+                    <p class="meta">Color: Blue</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('Puma SpeedCat OG', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <img src="img\adidasred.png" alt="shoes">
+                <div class="pad">
+                    <h4 class="title">Adidas Handball Special</h4>
+                    <p class="meta">Color: Red</p>
+                    <div class="row">
+                        <span class="price">₱1299</span>
+                        <button class="add" type="button" onclick="addToCart('Adidas Handball Special', 1299)">Add</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+<aside id="cart" class="cart-sidebar">
+    <button class="close-cart" onclick="closeCart()">×</button>
+    <h3>Your Cart</h3>
+    <a class="checkout-link" href="checkout.html">Proceed to Checkout</a>
+    <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+</aside>
+</main>
+    <footer class="site-footer">
+        <div class="container">© 2025 USAGE.PH — All rights reserved.</div>
+    </footer>
+
+    <script src="bountique.js"></script>
 </body>
 </html>

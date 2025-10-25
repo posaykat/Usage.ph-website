@@ -1,3 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero .hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    z-index: 2;
+}
+
+.center-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.center-nav a:hover {
+    text-decoration: underline;
+}
+
+.hero-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 500px;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Hero inner layout to place hero text and developer card side-by-side */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    /* center vertically within the viewport minus header height */
+    min-height: calc(100vh - 80px);
+    padding: 0 20px;
+}
+.hero-side { display: flex; justify-content: flex-end; }
+.hero-side .dev-card { background: rgba(255,255,255,0.98); color: #111; max-width: 360px; }
+.hero-side .dev-card .dev-info p { color: #444; font-size: 0.95rem; margin-top:6px; }
+
+/* When using the hero-inner layout, ensure hero text is not absolutely positioned and will flow next to the dev card */
+.hero-inner .hero-text {
+    position: static;
+    transform: none;
+    left: auto;
+    max-width: 640px;
+    text-align: left;
+    padding: 40px 0;
+}
+
+
+.hero-text h2 {
+    font-size: 50px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    line-height: 1.6;
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #e5e5e5;
+}
+
+.hero-text a {
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 15px 0;
+    z-index: 999;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottom-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+    color: #ffefc3;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .center-nav a {
+        font-size: 16px;
+    }
+
+    .hero-text {
+        left: 30px;
+        bottom: 140px;
+        max-width: 90%;
+    }
+
+    .hero-text h2 {
+        font-size: 22px;
+    }
+
+    .bottom-nav {
+        gap: 30px;
+        padding: 12px 0;
+    }
+}
+
+@media (max-width: 880px) {
+    .hero-text { position: static; transform: none; text-align: center; padding-top: 20px; }
+    .hero-inner { display: block; padding: 80px 20px 20px 20px; }
+    .hero-side { margin-top: 18px; display: flex; justify-content: center; }
+}
 body {
     margin: 0;
     font-family: 'League Spartan', sans-serif;
@@ -19,6 +199,9 @@ header {
 header .logo {
     font-size: 1.5rem;
     font-weight: 700;
+}
+header .logo {
+    font-family: 'Finger Paint', cursive;
 }
 
 nav a {
@@ -58,12 +241,29 @@ section {
 }
 
 #home a {
+
     background: #f4b400;
     color: black;
     padding: 10px 20px;
     text-decoration: none;
     font-weight: 700;
     border-radius: 5px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.hero-cta a {
+    background: #f4b400;
+    color: #000;
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
 }
 
 #about {
@@ -83,9 +283,47 @@ section {
     line-height: 1.5;
 }
 
+
+.about-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 30px; align-items: center; padding: 40px 20px; }
+.about-content { text-align: left;  }
+.about-content h2 { color: #111; }
+.about-content p { color: #333; }
+.dev-card {
+    background: linear-gradient(180deg, #ffffff, #fbfbfb);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(12,12,12,0.12);
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    border: 1px solid rgba(0,0,0,0.04);
+    max-width: 360px;
+}
+.dev-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+.dev-card .dev-info h3 { margin: 0 0 6px 0; color: #111; font-size: 1.05rem; }
+.dev-info { color: #111; }
+.dev-card .dev-info p { margin: 0; color: #444; font-size: 0.95rem; line-height: 1.4; }
+
+.dev-actions { margin-top: 10px; }
+.dev-actions .btn { display: inline-block; background: #f4b400; color: #111; padding: 8px 12px; border-radius: 8px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 20px rgba(244,180,0,0.16); transition: transform 0.16s ease, box-shadow 0.16s ease; }
+.dev-actions .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(244,180,0,0.18); }
+
+@media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; padding: 20px; }
+    .dev-card { justify-content: center; text-align: center; flex-direction: column; }
+    .dev-card img { margin-bottom: 8px; }
+}
+
 #contact {
     background: #111;
-    color: white;
+    color: #000000;
 }
 
 #contact h2 {
@@ -108,6 +346,8 @@ input, textarea {
     font-size: 1rem;
 }
 
+
+
 button {
     background: #f4b400;
     border: none;
@@ -123,3 +363,4 @@ footer {
     text-align: center;
     padding: 15px;
 }
+
